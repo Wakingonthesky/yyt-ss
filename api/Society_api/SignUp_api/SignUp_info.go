@@ -17,7 +17,7 @@ type SignUpRecv struct {
 	} `json:"user_Info"`
 }
 
-type SignUpRtrn struct{
+type SignUpRtrn struct {
 	status string
 }
 
@@ -28,5 +28,5 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 		return
 	}
 	global.Log.Infof("request=%#v", body)
-	res.OKWithData(, c)
+
 }
