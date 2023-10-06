@@ -15,7 +15,8 @@ func InitRouter() *gin.Engine {
 	apiRouterGroup := router.Group("/api/society")
 	RouterGroupApp := RouterGroup{apiRouterGroup}
 	//系统操作api
-	RouterGroupApp.LoginJsonRouter()
+
 	RouterGroupApp.SignUpRouter()
+	RouterGroupApp.InquiryRouter()
 	return router
 }
