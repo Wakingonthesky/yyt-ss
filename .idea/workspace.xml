@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="39f7d4c8-a31c-4902-9a07-126bf5253ccc" name="Changes" comment="first commit&#10;second commit" />
+=======
+    <list default="true" id="39f7d4c8-a31c-4902-9a07-126bf5253ccc" name="Changes" comment="" />
+>>>>>>> origin/fzc
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +22,12 @@
     </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../Go" />
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+=======
+>>>>>>> origin/fzc
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
   </component>
@@ -28,7 +35,10 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2WEdxRzfVAesiPpQAiL1ZUnMrvT" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+>>>>>>> origin/fzc
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,9 +58,14 @@
     &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;D:/GoProjects/work/guanxingtuan_bck&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;D:/GoProjects/test/gin_study&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;
+>>>>>>> origin/fzc
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -73,7 +88,11 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+=======
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+>>>>>>> origin/fzc
       <module name="guanxingtuan_bck" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
@@ -91,11 +110,20 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+>>>>>>> origin/fzc
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -111,6 +139,8 @@
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
+=======
+>>>>>>> origin/fzc
   <component name="VgoProject">
     <environment>
       <map>
