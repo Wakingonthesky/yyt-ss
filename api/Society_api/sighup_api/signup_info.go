@@ -22,14 +22,14 @@ type SignUpRtrn struct {
 }
 
 type InquiryRecv struct {
-	UserName  string `json:"user_Name"`
+	StudentID string `json:"user_StudentID"`
 	SocietyID string `json:"societyID"`
 }
 
 func (SignUpApi) SignUpInfoView(c *gin.Context) {
 	var (
 		body   Recv
-		result []Recv
+		result []models.UserSociety
 		user   models.UserInfo
 	)
 	if err := c.BindJSON(&body); err != nil {
@@ -39,11 +39,11 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 		return
 	}
 
-	global.DB.Where("username=?", body.UserInfo.UserName).First(&result)
+	global.DB.Where("user_realname=?", body.UserInfo.UserName).First(&user)
 	if user.USER_HASSIGN == 1 { //是否用户已经注册
-		res.OKWithMessage("用户已注册", c)
+		res.OKWithMessage("用户已报名", c)
 	} else {
-		res.OKWithMessage("用户未注册", c)
+		res.OKWithMessage("用户未报名", c)
 		global.DB.Create(&models.UserInfo{
 			USER_REALNAME:  body.UserInfo.UserName,
 			USER_PHONE:     body.UserInfo.UserPhone,
@@ -54,12 +54,12 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 		})
 	}
 
-	global.DB.Where("username=?", body.UserInfo.UserName)
+	global.DB.Where("user_student_id=?", body.UserInfo.UserStudentID).Find(&result)
 	flag := 0
 	for _, index := range result {
-		if index.UserInfo.SocietyID == body.UserInfo.SocietyID {
+		if index.SOCIETY_ID == body.UserInfo.SocietyID {
 			flag = 1
-			res.OKWithMessage("社团已注册", c)
+			res.OKWithMessage("社团已报名", c)
 		}
 	}
 	if flag == 0 {
@@ -71,7 +71,6 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 			CREATED_TIME:   time.Now(),
 			UPDATED_TIME:   time.Now(),
 		})
-		res.OKWithMessage("操作成功", c)
 	}
 
 }
@@ -79,7 +78,7 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 func (SignUpApi) InquirySigned(c *gin.Context) {
 	var (
 		body   InquiryRecv
-		result []InquiryRecv
+		result []models.UserSociety
 	)
 	if err := c.BindJSON(&body); err != nil {
 		global.Log.Infof("request=%#v", body)
@@ -87,10 +86,16 @@ func (SignUpApi) InquirySigned(c *gin.Context) {
 		res.FailWithCode(400, c)
 	}
 
-	global.DB.Where("societyid=?", body.SocietyID)
+	global.DB.Where("society_id=?", body.SocietyID).Find(&result)
+	flag := 0
 	for _, index := range result {
-		if index.UserName == body.UserName {
-			res.OKWithMessage("社团已报名", c)
+		if index.USER_STUDNETID == body.StudentID {
+			flag = 1
+			res.OKWithMessage("用户已报名", c)
+			return
 		}
+	}
+	if flag == 0 {
+		res.OKWithMessage("用户未报名", c)
 	}
 }
