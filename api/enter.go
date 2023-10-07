@@ -1,12 +1,12 @@
 package api
 
 import (
-	"guanxingtuan_bck/api/Society_api/SignUp_api"
 	"guanxingtuan_bck/api/Society_api/inquiry"
+	"guanxingtuan_bck/api/Society_api/sighup_api"
 )
 
 type ApiGROUP struct {
-	SignUpApi  SignUp_api.SignUpApi
+	SignUpApi  sighup_api.SignUpApi
 	InquiryApi inquiry.InquiryApi
 }
 

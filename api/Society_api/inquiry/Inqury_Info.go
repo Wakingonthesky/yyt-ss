@@ -23,5 +23,4 @@ func (InquiryApi) InquiryInfoView(c *gin.Context) {
 	global.DB.Where("user_student_id = ?", studentID).Find(&list)
 	res.OKWithData(list, c)
 	global.Log.Infof("request=%#v", inquiry)
-
 }
