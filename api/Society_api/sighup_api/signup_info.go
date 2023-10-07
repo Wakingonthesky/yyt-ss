@@ -36,6 +36,7 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 		global.Log.Infof("request=%#v", body)
 		global.Log.Errorf("%s", err)
 		res.FailWithCode(400, c)
+		return
 	}
 
 	global.DB.Where("username=?", body.UserInfo.UserName).First(&result)
