@@ -12,9 +12,9 @@ type UserSociety struct {
 	USER_SOCIETY_ID string    `gorm:"size:32"`  //报名ID
 	USER_UID        string    `gorm:"size:255"` //用户ID
 	USER_REALNAME   string    `gorm:"size:255"` //用户姓名
-	USER_STUDNETID  int       `gorm:"size:10"`  //用户学号
-	USER_PHONE      int       `gorm:"size:11"`  //用户手机号
-	SOCIETY_ID      int       `gorm:"size:4"`   //社团编号
+	USER_STUDNETID  string    `gorm:"size:25"`  //用户学号
+	USER_PHONE      string    `gorm:"size:"255` //用户手机号
+	SOCIETY_ID      string    `gorm:"size:32"`  //社团编号
 	SOCIETY_NAME    string    `gorm:"size:255"` //社团名称
 }
 
