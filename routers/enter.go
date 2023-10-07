@@ -17,6 +17,6 @@ func InitRouter() *gin.Engine {
 	//系统操作api
 	RouterGroupApp.SignUpRouter()
 	RouterGroupApp.InquiryRouter()
-
+	RouterGroupApp.HasSignRouter()
 	return router
 }
