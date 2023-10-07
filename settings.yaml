@@ -2,6 +2,7 @@ mysql:
   host:           ssh.guanxingtuan.top
   port:           3307
   db:             userdb
+  config:         "parseTime=true"
   user:           root
   password:       ytt@2023
   log_level:      dev
