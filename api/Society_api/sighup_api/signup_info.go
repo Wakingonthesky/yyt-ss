@@ -28,6 +28,7 @@ func (SignUpApi) SignUpInfoView(c *gin.Context) {
 		res.FailWithCode(400, c)
 		return
 	}
+	
 	global.DB.Create(&models.UserInfo{
 		USER_REALNAME:  body.UserInfo.UserName,
 		USER_PHONE:     body.UserInfo.UserPhone,

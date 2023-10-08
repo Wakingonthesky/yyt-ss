@@ -27,6 +27,9 @@ func OKWithData(data any, c *gin.Context) {
 	Result(OKCode, data, "成功", c)
 }
 
+func OKWithCode(code Code, c *gin.Context) {
+	Result(code, map[string]any{}, "", c)
+}
 func OKWithMessage(msg string, c *gin.Context) {
 	Result(OKCode, map[string]any{}, msg, c)
 }

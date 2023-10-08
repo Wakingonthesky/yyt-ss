@@ -24,7 +24,7 @@ func (HasSignApi) HasSignInfoView(c *gin.Context) {
 		res.FailWithCode(400, c)
 	}
 	//在User_Society_Info表中查找
-	global.DB.Where("user_student_id=?", body.SocietyID).Find(&result)
+	global.DB.Where("user_student_id=?", body.StudentID).Find(&result)
 	flag := 0
 	for _, index := range result {
 		if index.USER_STUDENT_ID == body.StudentID {
