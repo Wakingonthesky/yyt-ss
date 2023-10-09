@@ -1,9 +1,12 @@
 package routers
 
-import "guanxingtuan_bck/api"
+import (
+	"guanxingtuan_bck/api"
+	"guanxingtuan_bck/middleware"
+)
 
 func (router RouterGroup) InquiryRouter() {
 	Inquiryapi := api.ApiGroupApp.InquiryApi
-	router.GET("inquiry", Inquiryapi.InquiryInfoView)
+	router.GET("inquiry", middleware.Jwt(), Inquiryapi.InquiryInfoView)
 
 }

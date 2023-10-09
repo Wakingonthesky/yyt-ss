@@ -13,13 +13,15 @@ const (
 	PartialContent              Code = 206
 
 	MultipleChoices   Code = 300
-	MovedPermanently  Code = 301
-	Found             Code = 302
+	NotTakeToken      Code = 301
+	WrongToken        Code = 302
 	SeeOther          Code = 303
 	NotModified       Code = 304
 	UseProxy          Code = 305
 	Unused            Code = 306
 	TemporaryRedirect Code = 307
+	MovedPermanently  Code = 308
+	Found             Code = 309
 
 	BadRequest                  Code = 400
 	Unauthorized                Code = 401
@@ -68,6 +70,8 @@ var (
 		Unused:            "已经被废弃的HTTP状态码",
 		TemporaryRedirect: "临时重定向。与302类似。使用GET请求重定向",
 
+		NotTakeToken:                "未携带token",
+		WrongToken:                  "token验证失败",
 		BadRequest:                  "客户端请求的语法错误,服务器无法理解",
 		Unauthorized:                "请求要求用户的身份认证",
 		PaymentRequired:             "保留,将来使用",

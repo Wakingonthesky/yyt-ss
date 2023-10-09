@@ -1,10 +1,10 @@
 mysql:
-  host:           ssh.guanxingtuan.top
-  port:           3307
-  db:             userdb
+  host:           127.0.0.1
+  port:           3306
+  db:             user
   config:         "parseTime=true"
   user:           root
-  password:       ytt@2023
+  password:       1234
   log_level:      dev
 
 
