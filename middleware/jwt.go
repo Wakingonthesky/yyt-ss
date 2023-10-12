@@ -1,12 +1,12 @@
 package middleware
 
 import (
+	"time"
+	"ytt-societyservice/controller/res"
+	"ytt-societyservice/models"
+
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"guanxingtuan_bck/global"
-	"guanxingtuan_bck/models"
-	"guanxingtuan_bck/models/res"
-	"time"
 )
 
 /*
@@ -22,25 +22,23 @@ func Jwt() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var f models.Token
 		if err := c.BindJSON(&f); err != nil {
-			res.OKWithCode(res.BadRequest, c)
+			res.OKWithCode(res.BadRequest)
 		} else {
 
 			if f.AccessToken == "" {
-				res.OKWithCode(res.NotTakeToken, c)
+				res.OKWithCode(res.NotTakeToken)
 				c.Abort()
 				return
 			} else {
-				global.Log.Infof("Token=%#v", f.AccessToken)
 				claims := &models.MyClaims{}
 				jwt.ParseWithClaims(f.AccessToken, claims, func(t *jwt.Token) (interface{}, error) { return claims, nil })
-				global.Log.Infof("claims=%#v", claims)
 				if claims.ID == "" {
-					res.OKWithCode(res.WrongToken, c)
+					res.OKWithCode(res.WrongToken)
 					c.Abort()
 					return
 				}
 				if time.Now().Unix() > claims.ExpiresAt.Unix() {
-					res.OKWithCode(res.WrongToken, c)
+					res.OKWithCode(res.WrongToken)
 					c.Abort()
 					return
 				} else {
