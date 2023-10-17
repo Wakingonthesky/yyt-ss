@@ -9,9 +9,9 @@ import (
 )
 
 func Inquiry(c *gin.Context) {
-	studentID := c.Query("studentID")
+	UID := c.Query("uid")
 
-	if ls, err := services.Inquiry(studentID); err != nil {
+	if ls, err := services.Inquiry(UID); err != nil {
 		c.JSON(http.StatusOK, res.OK(&gin.H{"isSignup": false}, "success"))
 	} else {
 

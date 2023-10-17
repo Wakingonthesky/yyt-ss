@@ -9,10 +9,10 @@ import (
 )
 
 func Issign(c *gin.Context) {
-	studentID := c.Query("studentID")
+	UID := c.Query("uid")
 	societyID := c.Query("societyID")
 
-	if flag, err := services.IsSign(studentID, societyID); err != nil {
+	if flag, err := services.IsSign(UID, societyID); err != nil {
 		c.JSON(http.StatusOK, res.OK(&gin.H{"isSignup": false}, "success"))
 	} else {
 

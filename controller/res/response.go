@@ -22,33 +22,33 @@ func OK(data any, msg string) *gin.H {
 	return Result(OKCode, data, msg)
 }
 
-func OKWithData(data any) {
-	Result(OKCode, data, "成功")
+func OKWithData(data any) *gin.H {
+	return Result(OKCode, data, "成功")
 }
 
-func OKWithCode(code Code) {
-	Result(code, map[string]any{}, ErrorMap[code])
+func OKWithCode(code Code) *gin.H {
+	return Result(code, map[string]any{}, ErrorMap[code])
 }
-func OKWithMessage(msg string) {
-	Result(OKCode, map[string]any{}, msg)
-}
-
-func Fail(data any, msg string) {
-	Result(BadRequest, data, msg)
+func OKWithMessage(msg string) *gin.H {
+	return Result(OKCode, map[string]any{}, msg)
 }
 
-func FailWithData(data any) {
-	Result(BadRequest, data, "成功")
+func Fail(data any, msg string) *gin.H {
+	return Result(BadRequest, data, msg)
 }
 
-func FailWithMessage(msg string) {
-	Result(BadRequest, map[string]any{}, msg)
+func FailWithData(data any) *gin.H {
+	return Result(BadRequest, data, "成功")
 }
-func FailWithCode(code Code) {
+
+func FailWithMessage(msg string) *gin.H {
+	return Result(BadRequest, map[string]any{}, msg)
+}
+func FailWithCode(code Code) *gin.H {
 	msg, ok := ErrorMap[Code(code)]
 	if ok {
-		Result(code, map[string]any{}, msg)
-		return
+		return Result(code, map[string]any{}, msg)
+
 	}
-	Result(code, map[string]any{}, "未知错误")
+	return Result(code, map[string]any{}, "未知错误")
 }

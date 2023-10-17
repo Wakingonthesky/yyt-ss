@@ -5,12 +5,17 @@ import (
 	"ytt-societyservice/models"
 )
 
-func IsSign(st string, so string) (bool, error) {
+func IsSign(uid string, so string) (bool, error) {
+	var count int64
 	DB := config.DB
-	res := DB.Where("studentID = ? AND societyID = ? ", st, so).Find(&models.UserSociety{})
+	res := DB.Where("user_uid = ? AND society_ID = ? ", uid, so).Find(&models.UserSociety{}).Count(&count)
 
-	if res.RowsAffected >= 1 {
+	if res.Error != nil {
 		return false, res.Error
+	}
+
+	if count >= 1 {
+		return false, nil
 	} else {
 		return true, nil
 	}

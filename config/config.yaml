@@ -1,10 +1,10 @@
 mysql:
-  host:           127.0.0.1
-  port:           3306
-  db:             gintest
+  host:           ssh.guanxingtuan.top
+  port:           3307
+  db:             userdb
   config:         "parseTime=true"
   user:           root
-  password:       123456
+  password:       ytt@2023
   log_level:      dev
 
 
@@ -12,3 +12,6 @@ system:
   host:           "127.0.0.1"
   port:           8080
   env:            release
+  
+AccessKeyID: Q4yKxNBy8nvZ9kCsgwTYmq4xnAKTrqbVuN66sEwxyjfCCoLGL
+key: "mY9bY4xN4f"

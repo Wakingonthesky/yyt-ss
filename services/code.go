@@ -2,21 +2,19 @@ package services
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 	"ytt-societyservice/config"
 
 	unisms "github.com/apistd/uni-go-sdk/sms"
 )
 
-func Code(phone string, info string) error {
+func Code(phone string, urn string, sid string) error {
 	accessKeyId := config.C.GetString("AccessKeyID")
 
 	fmt.Println(accessKeyId)
 
 	client := unisms.NewClient(accessKeyId)
 
-	rand.Seed(time.Now().UnixNano())
+	//rand.Seed(time.Now().UnixNano())
 
 	//vcode := fmt.Sprintf("%06v", rand.Int31n(1000000))
 
@@ -25,7 +23,7 @@ func Code(phone string, info string) error {
 	message.SetTo(phone)
 	message.SetSignature("重邮天文协会")
 	message.SetTemplateId("pub_verif_basic2")
-	message.SetTemplateData(map[string]string{"code": info})
+	message.SetTemplateData(map[string]string{"code": urn})
 
 	_, err := client.Send(message)
 
