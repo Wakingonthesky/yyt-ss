@@ -1,6 +1,6 @@
 mysql:
-  host:           ssh.guanxingtuan.top
-  port:           3307
+  host:           124.222.234.231
+  port:           3306
   db:             userdb
   config:         "parseTime=true"
   user:           root
