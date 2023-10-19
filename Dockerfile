@@ -4,15 +4,15 @@ RUN go env -w GO111MODULE=on
 
 RUN go env -w GOPROXY=https://goproxy.cn,direct
 
-WORKDIR /home/youtuantuan_societyservice
+WORKDIR /home/ytt
 
-ADD . /home/youtuantuan_societyservice
+ADD . /home/ytt
 
-RUN go build .
+RUN go build -o main .
 
 EXPOSE 8080
 
-ENTRYPOINT ["./youtuantuan_societyservice"]
+ENTRYPOINT ["./main"]
 
 
 

@@ -8,6 +8,6 @@ import (
 func main() {
 	config.Init()
 	router := routers.InitRouter()
-	router.Run(":8083")
+	router.Run(":8080")
 
 }
