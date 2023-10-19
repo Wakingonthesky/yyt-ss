@@ -12,7 +12,7 @@ func Signup(f *request.Signup) error {
 		log.Panic(err)
 		return err
 	} else {
-		Code(f.User_info.User_Phone, f.User_info.User_Name, f.User_info.SocietyID)
+		//Code(f.User_info.User_Phone, f.User_info.User_Name, f.User_info.SocietyID)
 		return nil
 	}
 
